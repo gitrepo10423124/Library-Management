@@ -1,0 +1,79 @@
+/* === Root === */
+.root {
+    -fx-font-family: "Segoe UI", "Tahoma", sans-serif;
+    -fx-background-color: linear-gradient(to bottom, #47ba8a, #e38330);
+    -fx-background-image: url("lib2.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: right 30px bottom 30px;
+    -fx-background-size: 250px auto;
+    -fx-padding: 10;
+}
+/* === VBox / HBox spacing === */
+.vbox, .hbox {
+    -fx-spacing: 10;
+}
+
+/* === Buttons === */
+.button {
+    -fx-background-color: #0078d4;
+    -fx-text-fill: white;
+    -fx-background-radius: 6;
+    -fx-padding: 6 12;
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 2,0,0,1);
+}
+
+.button:hover {
+    -fx-background-color: #005a9e;
+}
+
+/* === TableView === */
+.table-view {
+    -fx-background-color: white;
+    -fx-table-cell-border-color: transparent;
+    -fx-border-color: #e1e1e1;
+    -fx-border-radius: 6;
+    -fx-padding: 4;
+    -fx-font-size: 13px;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #f3f4f6;
+}
+
+.table-view .column-header, .table-view .filler {
+    -fx-border-color: transparent;
+    -fx-font-weight: bold;
+}
+
+.table-row-cell:filled:selected {
+    -fx-background-color: #366ac9;
+}
+
+.table-row-cell:hover {
+    -fx-background-color: #e5f1fb;
+}
+
+/* === TextField === */
+.text-field {
+    -fx-background-radius: 6;
+    -fx-border-radius: 6;
+    -fx-border-color: #cfd6dc;
+    -fx-padding: 4 8;
+}
+
+/* === Labels === */
+.label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #1e1e1e;
+}
+
+/* === GridPane / BorderPane === */
+.grid-pane, .border-pane {
+    -fx-background-color: white;
+    -fx-border-radius: 8;
+    -fx-padding: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 4,0,0,2);
+}
+

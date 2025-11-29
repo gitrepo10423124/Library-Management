@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="mysql-connector-j-9.5.0">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../mysql-connector-j-9.5.0/mysql-connector-j-9.5.0/mysql-connector-j-9.5.0.jar!/" />
+      <root url="file://$PROJECT_DIR$/../javafx-sdk-17.0.17/lib" />
+      <root url="jar://$PROJECT_DIR$/../slf4j-api-2.0.17.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../logback-core-1.4.11.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../logback-classic-1.4.11.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/../javafx-sdk-17.0.17/lib" recursive="false" />
+  </library>
+</component>
