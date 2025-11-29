@@ -71,7 +71,7 @@ public class HistoryView extends ManagementView<History> {
         layout.setCenter(table);
         layout.setBottom(buttonBar);
 
-        Scene scene = new Scene(layout, 900, 450);
+        Scene scene = new Scene(layout, 700, 450);
         scene.getStylesheets().add(getClass().getResource("/style.css").toExternalForm());
 
         return scene;
