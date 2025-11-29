@@ -1,7 +1,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.group.library</groupId>
@@ -20,7 +19,6 @@
     </properties>
 
     <dependencies>
-        <!-- JavaFX modules -->
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
@@ -32,14 +30,12 @@
             <version>${javafx.version}</version>
         </dependency>
 
-        <!-- MySQL Connector -->
         <dependency>
             <groupId>com.mysql</groupId>
             <artifactId>mysql-connector-j</artifactId>
             <version>${mysql.connector.version}</version>
         </dependency>
 
-        <!-- SLF4J + Logback -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
@@ -50,16 +46,10 @@
             <artifactId>logback-classic</artifactId>
             <version>${logback.version}</version>
         </dependency>
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-core</artifactId>
-            <version>${logback.version}</version>
-        </dependency>
     </dependencies>
 
     <build>
         <plugins>
-            <!-- JavaFX Maven Plugin -->
             <plugin>
                 <groupId>org.openjfx</groupId>
                 <artifactId>javafx-maven-plugin</artifactId>
