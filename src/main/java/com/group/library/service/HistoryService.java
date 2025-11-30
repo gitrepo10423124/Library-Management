@@ -48,7 +48,6 @@ public class HistoryService {
             DatabaseManager.commit(conn);
 
         } catch (SQLException e) {
-            // Replaced e.printStackTrace() with SLF4J
             logger.error("Error retrieving all history records.", e);
         }
         return list;
@@ -65,7 +64,6 @@ public class HistoryService {
             logger.warn("History cleared. Deleted {} records.", rows);
 
         } catch (SQLException e) {
-            // Replaced e.printStackTrace() with SLF4J
             logger.error("Error clearing history records.", e);
         }
     }

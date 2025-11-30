@@ -66,7 +66,6 @@ public class HistoryView extends ManagementView<History> {
         HBox buttonBar = new HBox(10, clearBtn);
         buttonBar.setPadding(new Insets(10));
 
-        // Layout
         BorderPane layout = new BorderPane();
         layout.setCenter(table);
         layout.setBottom(buttonBar);

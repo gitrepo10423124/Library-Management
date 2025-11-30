@@ -32,8 +32,6 @@ public class MemberView extends ManagementView<Member> {
         stage.setTitle("Member Management");
         TableView<Member> table = new TableView<>();
 
-        // --- UPDATED COLUMN DEFINITIONS FOR CONSISTENCY ---
-
         TableColumn<Member, Integer> idCol = new TableColumn<>("ID");
         idCol.setCellValueFactory(new PropertyValueFactory<>("id")); // Cleaner access
 
@@ -53,7 +51,6 @@ public class MemberView extends ManagementView<Member> {
                         (int) libraryService.loanService.countOngoingLoansForMember(data.getValue().getId())
                 ).asObject());
 
-        // --- END UPDATED COLUMN DEFINITIONS ---
 
         table.getColumns().addAll(idCol, nameCol, emailCol, phoneCol, loanCol);
 

@@ -28,7 +28,6 @@ public class MainMenu {
         Button historyBtn = new Button("View History");
         historyBtn.setOnAction(e -> new HistoryView(libraryService).show(new Stage()));
 
-        // Open management views in new stages/windows
         booksBtn.setOnAction(e -> new BookView(libraryService).show(new Stage()));
         membersBtn.setOnAction(e -> new MemberView(libraryService).show(new Stage()));
         loansBtn.setOnAction(e -> new LoanView(libraryService).show(new Stage()));

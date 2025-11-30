@@ -65,7 +65,6 @@ public class MemberService {
         boolean exists = hasManualId && getMemberById(member.getId()) != null;
 
         if (exists) {
-            // Update
             try (Connection conn = DatabaseManager.getConnection()) {
                 String sql = "UPDATE Members SET name=?, email=?, phone=? WHERE id=?";
                 try (PreparedStatement ps = conn.prepareStatement(sql)) {
@@ -83,7 +82,6 @@ public class MemberService {
             return;
         }
 
-        // Insert
         try (Connection conn = DatabaseManager.getConnection()) {
             String sql = hasManualId
                     ? "INSERT INTO Members (id, name, email, phone) VALUES (?, ?, ?, ?)"

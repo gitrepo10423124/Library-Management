@@ -50,12 +50,9 @@ public class MemberDialog extends Dialog<Member> {
                     return null;
                 }
 
-                // 2. Prepare other field values using local variables for consistency
                 String name = nameField.getText().trim();
                 String email = emailField.getText().trim();
-                String phone = phoneField.getText().trim(); // Already done, but kept for consistency
-
-                // The phone numeric validation (now removed as requested) would have been here.
+                String phone = phoneField.getText().trim();
 
                 return new Member(
                         id,
