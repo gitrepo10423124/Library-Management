@@ -7,7 +7,7 @@ import javafx.collections.transformation.SortedList;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory; // New import needed
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
@@ -33,24 +33,25 @@ public class MemberView extends ManagementView<Member> {
         TableView<Member> table = new TableView<>();
 
         TableColumn<Member, Integer> idCol = new TableColumn<>("ID");
-        idCol.setCellValueFactory(new PropertyValueFactory<>("id")); // Cleaner access
+        idCol.setCellValueFactory(new PropertyValueFactory<>("id"));
 
         TableColumn<Member, String> nameCol = new TableColumn<>("Name");
-        nameCol.setCellValueFactory(new PropertyValueFactory<>("name")); // Cleaner access
+        nameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
 
         TableColumn<Member, String> emailCol = new TableColumn<>("Email");
-        emailCol.setCellValueFactory(new PropertyValueFactory<>("email")); // Cleaner access
+        emailCol.setCellValueFactory(new PropertyValueFactory<>("email"));
 
         TableColumn<Member, String> phoneCol = new TableColumn<>("Phone");
-        phoneCol.setCellValueFactory(new PropertyValueFactory<>("phone")); // Cleaner access
+        phoneCol.setCellValueFactory(new PropertyValueFactory<>("phone"));
 
-        // This complex column MUST keep the manual binding
         TableColumn<Member, Integer> loanCol = new TableColumn<>("Active Loan");
         loanCol.setCellValueFactory(data ->
                 new javafx.beans.property.SimpleIntegerProperty(
-                        (int) libraryService.loanService.countOngoingLoansForMember(data.getValue().getId())
-                ).asObject());
-
+                        (int) libraryService.loanService.countOngoingLoansForMember(
+                                data.getValue().getId()
+                        )
+                ).asObject()
+        );
 
         table.getColumns().addAll(idCol, nameCol, emailCol, phoneCol, loanCol);
 
@@ -74,10 +75,16 @@ public class MemberView extends ManagementView<Member> {
         searchField.setPromptText("Search by Name/Email/Phone");
         searchField.textProperty().addListener((obs, oldV, newV) -> {
             String filter = newV.toLowerCase();
-            filteredData.setPredicate(m ->
-                    m.getName().toLowerCase().contains(filter) ||
-                            m.getEmail().toLowerCase().contains(filter) ||
-                            m.getPhone().toLowerCase().contains(filter));
+
+            filteredData.setPredicate(m -> {
+                String name = m.getName() == null ? "" : m.getName().toLowerCase();
+                String email = m.getEmail() == null ? "" : m.getEmail().toLowerCase();
+                String phone = m.getPhone() == null ? "" : m.getPhone().toLowerCase();
+
+                return name.contains(filter) ||
+                        email.contains(filter) ||
+                        phone.contains(filter);
+            });
         });
 
         Button addBtn = new Button("Add/Edit Member");
@@ -116,6 +123,7 @@ public class MemberView extends ManagementView<Member> {
         return scene;
     }
 }
+
 
 
 
